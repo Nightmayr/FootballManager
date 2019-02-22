@@ -35,7 +35,7 @@ services:
       ports:
         - target: 8084
           published: 8084
-      links:
+      depends_on:
         - mongo
         - activemq
     mongoclient:
@@ -44,7 +44,7 @@ services:
       ports:
         - target: 8085
           published: 8085
-      links:
+      depends_on:
         - mongo
     front:
       image: nightmayr/football-front
