@@ -7,61 +7,61 @@ services:
       - target: 8080
         published: 8080
         protocol: tcp
-        volumes:
-          - type: bind
-            source: /var/run/docker.sock
-            target: /var/run/docker.sock
-    account:
-      image: nightmayr/football-account
-      container_name: account
-      ports:
-        - target: 8081
-          published: 8081
-    player:
-      image: nightmayr/football-player
-      container_name: player
-      ports:
-        - target: 8082
-          published: 8082  
-    email:
-      image: nightmayr/football-email
-      container_name: email
-      ports:
-        - target: 8083
-          published: 8083
-    consumer:
-      image: nightmayr/football-consumer
-      container_name: consumer
-      ports:
-        - target: 8084
-          published: 8084
-      depends_on:
-        - mongo
-        - activemq
-    mongoclient:
-      image: nightmayr/football-mongoclient
-      container_name: mongoclient
-      ports:
-        - target: 8085
-          published: 8085
-      depends_on:
-        - mongo
-    front:
-      image: nightmayr/football-front
-      container_name: front
-      ports:
-        - target: 3000
-          published: 3000  
-    mongo: 
-      image: mongo:latest
-      ports: 
-        - target: 27017
-          published: 27017
-      container_name: mongo
-    activemq:
-      image: rmohr/activemq
-      ports: 
-        - 8161:8161
-        - 61616:61616
-        - 61613:61613
-      container_name: activemq
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+  account:
+    image: nightmayr/football-account
+    container_name: account
+    ports:
+      - target: 8081
+        published: 8081
+  player:
+    image: nightmayr/football-player
+    container_name: player
+    ports:
+      - target: 8082
+        published: 8082  
+  email:
+    image: nightmayr/football-email
+    container_name: email
+    ports:
+      - target: 8083
+        published: 8083
+  consumer:
+    image: nightmayr/football-consumer
+    container_name: consumer
+    ports:
+      - target: 8084
+        published: 8084
+    depends_on:
+      - mongo
+      - activemq
+  mongoclient:
+    image: nightmayr/football-mongoclient
+    container_name: mongoclient
+    ports:
+      - target: 8085
+        published: 8085
+    depends_on:
+      - mongo
+  front:
+    image: nightmayr/football-front
+    container_name: front
+    ports:
+      - target: 3000
+        published: 3000  
+  mongo: 
+    image: mongo:latest
+    ports: 
+      - target: 27017
+        published: 27017
+    container_name: mongo
+  activemq:
+    image: rmohr/activemq
+    ports: 
+      - 8161:8161
+      - 61616:61616
+      - 61613:61613
+    container_name: activemq
