@@ -23,12 +23,12 @@ services:
     ports:
       - target: 8082
         published: 8082  
-  email:
-    image: nightmayr/football-email
-    container_name: email
-    ports:
-      - target: 8083
-        published: 8083
+  # email:
+  #   image: nightmayr/football-email
+  #   container_name: email
+  #   ports:
+  #     - target: 8083
+  #       published: 8083
   consumer:
     image: nightmayr/football-consumer
     container_name: consumer
