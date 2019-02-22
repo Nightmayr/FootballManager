@@ -1,16 +1,16 @@
 version: '3.7'
 services:
-  jenkins:
-    image: jenkins/jenkins:latest
-    container_name: jenkins
-    ports:
-      - target: 8080
-        published: 8080
-        protocol: tcp
-    volumes:
-      - type: bind
-        source: /var/run/docker.sock
-        target: /var/run/docker.sock
+  # jenkins:
+  #   image: jenkins/jenkins:latest
+  #   container_name: jenkins
+  #   ports:
+  #     - target: 8080
+  #       published: 8080
+  #       protocol: tcp
+  #   volumes:
+  #     - type: bind
+  #       source: /var/run/docker.sock
+  #       target: /var/run/docker.sock
   account:
     image: nightmayr/football-account
     container_name: account
@@ -65,3 +65,11 @@ services:
       - 61616:61616
       - 61613:61613
     container_name: activemq
+  # nginx:
+  #   image: nginx
+  #   container_name: nginx
+  #   ports:
+  #       - 80:80
+  #       - 443:443
+  #   volume: 
+
