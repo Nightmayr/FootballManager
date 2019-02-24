@@ -1,8 +1,9 @@
 #/bin/bash
+branch=dockerdeploy
 
-git clone https://github.com/Nightmayr/FootballManager-Frontend.git
-git clone https://github.com/Nightmayr/FootballManager-AccountApi.git
-git clone https://github.com/Nightmayr/FootballManager-PlayerManager.git
-git clone https://github.com/Nightmayr/FootballManager-Email.git
-git clone https://github.com/Nightmayr/FootballManager-Consumer.git
-git clone https://github.com/Nightmayr/FootballManager-MongoClientService.git
+git clone --branch $branch https://github.com/Nightmayr/FootballManager-Frontend.git
+git clone --branch $branch https://github.com/Nightmayr/FootballManager-AccountApi.git
+git clone --branch $branch https://github.com/Nightmayr/FootballManager-PlayerManager.git
+#git clone --branch $branch https://github.com/Nightmayr/FootballManager-Email.git
+git clone --branch $branch https://github.com/Nightmayr/FootballManager-Consumer.git
+git clone --branch $branch https://github.com/Nightmayr/FootballManager-MongoClientService.git

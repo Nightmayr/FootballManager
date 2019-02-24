@@ -13,16 +13,18 @@ services:
   #       target: /var/run/docker.sock
   account:
     image: nightmayr/football-account
+    build: ./FootballManager-AccountApi
     container_name: account
     ports:
       - target: 8081
         published: 8081
   player:
     image: nightmayr/football-player
+    build: ./FootballManager-PlayerManager
     container_name: player
     ports:
       - target: 8082
-        published: 8082  
+        published: 8082
   # email:
   #   image: nightmayr/football-email
   #   container_name: email
@@ -31,6 +33,7 @@ services:
   #       published: 8083
   consumer:
     image: nightmayr/football-consumer
+    build: ./FootballManager-Consumer
     container_name: consumer
     ports:
       - target: 8084
@@ -40,6 +43,7 @@ services:
       - activemq
   mongoclient:
     image: nightmayr/football-mongoclient
+    build: ./FootballManager-MongoClientService
     container_name: mongoclient
     ports:
       - target: 8085
@@ -48,10 +52,11 @@ services:
       - mongo
   front:
     image: nightmayr/football-front
+    build: ./FootballManager-Frontend
     container_name: front
     ports:
       - target: 3000
-        published: 3000  
+        published: 3000
   mongo: 
     image: mongo:latest
     ports: 
