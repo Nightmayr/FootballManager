@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: front
-        image: nightmayr/football-front:v69.0
+        image: nightmayr/football-front
         ports:
           - containerPort: 3000
